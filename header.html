@@ -1,0 +1,23 @@
+<img id="mypic" src="./img/mainslide/slide1.jpg" width="100%" class="imgauto">
+<script>
+const picsSrc = ["./img/mainslide/slide1.jpg","./img/mainslide/slide2.jpg","./img/mainslide/slide3.jpg","./img/mainslide/slide4.jpg","./img/mainslide/slide5.jpg","./img/mainslide/slide6.jpg","./img/mainslide/slide7.jpg"];
+
+// 画面を開いたら１ずつ加算されるため -1から始める
+let num = 0;
+
+const slideShowTimer = () => {
+    console.log(num)
+    document.getElementById('mypic').src = picsSrc[num];
+    // picsSrc.lengthで配列の数をカウント。個数は7個だが配列のインデックスは0スタートのため１マイナス
+    if (num === picsSrc.length - 1) {
+        num = 0
+    } else {
+        num++;
+    }
+
+    setTimeout('slideShowTimer()', 3000);
+}
+
+slideShowTimer(0);
+</script>
+
